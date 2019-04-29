@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+
+  hierchary-table:
+    container_name: hierchary-table
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+    - '.:/app'
+    ports:
+    - '3000:3000'
+    environment:
+    - NODE_ENV=development
