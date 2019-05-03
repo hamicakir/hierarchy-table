@@ -3,9 +3,10 @@ const theme = {
         white: '#FFFFFF',
         black: '#000000',
         primaryColor: '#4F3F68',
-        secondaryColor: '#FED453',
+        secondaryColor: '#9D86DE',
         pink: '#FFA9D6',
-        borderColor: '#efefef'
+        borderColor: '#efefef',
+        red: '#E45865',
     }
 };
 

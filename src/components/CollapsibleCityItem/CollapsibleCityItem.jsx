@@ -1,11 +1,12 @@
 // @flow
 import React, { Component } from "react";
-import Styled from "styled-components";
+import Styled, { withTheme } from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowAltCircleDown,
   faTrashAlt
 } from "@fortawesome/free-solid-svg-icons";
+
 
 type Props = {
   ID: number,
@@ -30,7 +31,17 @@ class CollapsibleCityItem extends Component<Props, State> {
   };
 
   render() {
-    const { City, ID, Name, Phone, removeItem, subcities } = this.props;
+    const {
+      City,
+      ID,
+      Name,
+      Phone,
+      removeItem,
+      subcities,
+      theme: {
+        colors: { primaryColor, red }
+      }
+    } = this.props;
     const { isOpen } = this.state;
 
     return (
@@ -52,8 +63,14 @@ class CollapsibleCityItem extends Component<Props, State> {
             Phone:
             {Phone}
           </ParentItemText>
-          <FontAwesomeIcon icon={faTrashAlt} onClick={() => removeItem(ID)} />
-          {subcities && subcities.length > 0 && <FontAwesomeIcon icon={faArrowAltCircleDown} />}
+          <FontAwesomeIcon
+            icon={faTrashAlt}
+            onClick={() => removeItem(ID)}
+            color={red}
+          />
+          {subcities && subcities.length > 0 && (
+            <FontAwesomeIcon icon={faArrowAltCircleDown} color={primaryColor} />
+          )}
         </Parent>
         <Child>
           {isOpen &&
@@ -80,6 +97,7 @@ class CollapsibleCityItem extends Component<Props, State> {
                 <FontAwesomeIcon
                   icon={faTrashAlt}
                   onClick={() => removeItem(ID, city.ID)}
+                  color={red}
                 />
               </div>
             ))}
@@ -89,7 +107,7 @@ class CollapsibleCityItem extends Component<Props, State> {
   }
 }
 
-export default CollapsibleCityItem;
+export default withTheme(CollapsibleCityItem);
 
 const ItemWrapper = Styled.div`
     display: inline-flex;
@@ -118,8 +136,10 @@ const Parent = Styled.div`
 `;
 
 const Child = Styled.div`
+    margin: 10px 20px;
     display: inline-flex;
     width: 100%;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
 `;
