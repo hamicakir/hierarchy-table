@@ -29,8 +29,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Docker
 
-###`docker-compose build`
+### `docker-compose build`
 
-###`docker-compose up`
+### `docker-compose up`
 
 
