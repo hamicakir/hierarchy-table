@@ -12,8 +12,10 @@ module.exports = {
   env: {
     browser: true, // add browser globals variables like document and window
     es6: true, // add globals like Set
+    jest: true,
   },
   rules: {
-    "react/prop-types": [0]
+    "react/prop-types": [0],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
   }
 }

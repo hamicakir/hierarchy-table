@@ -36,6 +36,7 @@
   "lint-staged": {
     "*.{js,jsx}": [
       "eslint --fix",
+      "test",
       "prettier",
       "git add"
     ]
@@ -57,11 +58,13 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
-    "babel-jest": "^24.7.1",
+    "babel-jest": "^24.8.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-preset-flow": "^6.23.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
@@ -79,7 +82,8 @@
     "lint-staged": "^8.1.5",
     "prettier": "^1.17.0",
     "prettier-eslint": "^8.8.2",
-    "puppeteer": "^1.15.0"
+    "puppeteer": "^1.15.0",
+    "react-test-renderer": "^16.8.6"
   },
   "jest": {
     "collectCoverageFrom": [
