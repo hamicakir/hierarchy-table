@@ -36,7 +36,7 @@
   "lint-staged": {
     "*.{js,jsx}": [
       "eslint --fix",
-      "jest",
+      "test",
       "prettier",
       "git add"
     ]
