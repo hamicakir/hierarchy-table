@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`City Detail renders correctly 1`] = `
+<div>
+  City Detail
+</div>
+`;

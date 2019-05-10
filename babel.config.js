@@ -1,17 +1,18 @@
 module.exports = {
   presets: [
     [
-      '@babel/preset-env',
+      "@babel/preset-env",
       {
         targets: {
-          node: 'current',
-        },
-      },
+          node: "current"
+        }
+      }
     ],
-    '@babel/preset-react',
-    'flow'
+    "@babel/preset-react",
   ],
-  plugin: [
-    '@babel/plugin-syntax-dynamic-import',
-  ],
+  plugins: [
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-proposal-class-properties",
+    "transform-flow-strip-types"
+  ]
 };
